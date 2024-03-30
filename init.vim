@@ -87,8 +87,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'preservim/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
 
-"set default color scheme to gruvbox 
-colorscheme gruvbox
+"set default color scheme to whatever you like 
+colorscheme
 
 " FZF file finder 
 let $FZF_DEFAULT_COMMAND = 'ag --ignore .repo --ignore .git --hidden -l -g  ""'
@@ -161,41 +161,3 @@ let NERDTreeShowHidden=1
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
-lua require('plugins')
-lua <<EOF
-local cmp = require('cmp')
-cmp.setup({
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  }),
-  sources = {
-    {name = 'buffer'},
-    {name = 'path'},
-  }
-})
-
--- `/` cmdline setup.
-cmp.setup.cmdline('/', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    {name = 'buffer'}
-  }
-})
-
--- `:` cmdline setup.
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    {name = 'path'},
-    {name = 'cmdline'}
-  }
-})
-EOF
