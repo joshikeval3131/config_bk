@@ -29,6 +29,7 @@ sudo apt install exuberant-ctags
 
 sudo apt install fzf 
 
+source ~/.bashrc
 # RUN plug instsall and PluginInstall command on NVIM  
 # This will install all plugins in nvim 
 
