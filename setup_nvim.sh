@@ -28,8 +28,11 @@ sudo apt install exuberant-ctags
 # Install fzf fuzzy finder 
 
 sudo apt install fzf 
+sudo apt install silversearcher-ag 
 
 source ~/.bashrc
+
+
 # RUN plug instsall and PluginInstall command on NVIM  
 # This will install all plugins in nvim 
 
